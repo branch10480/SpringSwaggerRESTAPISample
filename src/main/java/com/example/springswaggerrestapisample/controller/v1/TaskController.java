@@ -17,6 +17,11 @@ public class TaskController {
 
   private final TaskRepository repository;
 
+  // CORS - Cross Origin Resource Sharing
+  // オリジン間リソース共有
+  // 通常だと、異なるオリジン（ドメイン、プロトコル、ポート）間ではリソースのやり取りが制限されます。
+  // @CrossOrigin を指定することで成約を外すことができます（引数なしだと全許可）
+  @CrossOrigin
   @Operation(summary = "タスクを全件取得します")
   @GetMapping("/")
   public List<Task> findAll() {
